@@ -39,43 +39,110 @@
     <style>
         /* Premium cyber theme styles */
         @keyframes cyber-pulse {
-            0%, 100% { opacity: 0.4; transform: scale(1); }
-            50% { opacity: 0.8; transform: scale(1.05); }
+
+            0%,
+            100% {
+                opacity: 0.4;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
         }
+
         @keyframes neon-flicker {
-            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-            20%, 24%, 55% { opacity: 0.6; }
+
+            0%,
+            19%,
+            21%,
+            23%,
+            25%,
+            54%,
+            56%,
+            100% {
+                opacity: 1;
+            }
+
+            20%,
+            24%,
+            55% {
+                opacity: 0.6;
+            }
         }
+
         @keyframes scan-line {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100vh); }
+            0% {
+                transform: translateY(-100%);
+            }
+
+            100% {
+                transform: translateY(100vh);
+            }
         }
+
         @keyframes float-particle {
-            0%, 100% { transform: translateY(0) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) translateX(20px);
+                opacity: 0;
+            }
         }
+
         @keyframes border-glow {
-            0%, 100% { border-color: rgba(0, 212, 255, 0.3); box-shadow: 0 0 20px rgba(0, 212, 255, 0.1); }
-            50% { border-color: rgba(0, 255, 136, 0.5); box-shadow: 0 0 30px rgba(0, 255, 136, 0.2); }
+
+            0%,
+            100% {
+                border-color: rgba(0, 212, 255, 0.3);
+                box-shadow: 0 0 20px rgba(0, 212, 255, 0.1);
+            }
+
+            50% {
+                border-color: rgba(0, 255, 136, 0.5);
+                box-shadow: 0 0 30px rgba(0, 255, 136, 0.2);
+            }
         }
+
         @keyframes text-shimmer {
-            0% { background-position: -200% center; }
-            100% { background-position: 200% center; }
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
         }
+
         .cyber-grid {
-            background-image: 
+            background-image:
                 linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
         }
+
         .neon-text {
             text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 40px currentColor;
         }
+
         .neon-border {
             animation: border-glow 3s ease-in-out infinite;
         }
+
         .shimmer-text {
             background: linear-gradient(90deg, #fff 0%, #00D4FF 25%, #00FF88 50%, #A855F7 75%, #fff 100%);
             background-size: 200% auto;
@@ -84,23 +151,28 @@
             background-clip: text;
             animation: text-shimmer 4s linear infinite;
         }
+
         .card-cyber {
             background: linear-gradient(135deg, rgba(10, 15, 26, 0.9) 0%, rgba(20, 30, 50, 0.9) 100%);
             border: 1px solid rgba(0, 212, 255, 0.2);
             backdrop-filter: blur(10px);
         }
+
         .card-cyber:hover {
             border-color: rgba(0, 255, 136, 0.4);
             box-shadow: 0 0 40px rgba(0, 212, 255, 0.15), inset 0 0 40px rgba(0, 255, 136, 0.05);
         }
+
         .glow-orb {
             filter: blur(80px);
             animation: cyber-pulse 4s ease-in-out infinite;
         }
+
         .hero-badge {
             background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(168, 85, 247, 0.15));
             border: 1px solid rgba(0, 212, 255, 0.3);
         }
+
         .btn-cyber {
             background: linear-gradient(135deg, #00D4FF 0%, #00FF88 100%);
             color: #0a0f1a;
@@ -108,6 +180,7 @@
             overflow: hidden;
             z-index: 1;
         }
+
         .btn-cyber::before {
             content: '';
             position: absolute;
@@ -118,13 +191,16 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
+
         .btn-cyber:hover::before {
             opacity: 1;
         }
+
         .btn-cyber:hover {
             color: #00D4FF;
             box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
         }
+
         .particle {
             position: absolute;
             width: 4px;
@@ -133,6 +209,7 @@
             border-radius: 50%;
             animation: float-particle 8s linear infinite;
         }
+
         .stat-card {
             background: linear-gradient(180deg, rgba(0, 212, 255, 0.08) 0%, transparent 100%);
             border-top: 2px solid #00D4FF;
@@ -140,10 +217,12 @@
     </style>
 </head>
 
-<body class="bg-[#0a0f1a] text-slate-300 font-sans selection:bg-secondary selection:text-white flex flex-col min-h-screen cyber-grid">
+<body
+    class="bg-[#0a0f1a] text-slate-300 font-sans selection:bg-secondary selection:text-white flex flex-col min-h-screen cyber-grid">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 transition-all duration-300 bg-[#0a0f1a]/80 backdrop-blur-xl border-b border-[#00D4FF]/10">
+    <nav
+        class="fixed w-full z-50 transition-all duration-300 bg-[#0a0f1a]/80 backdrop-blur-xl border-b border-[#00D4FF]/10">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="flex items-center gap-3 group">
                 <div
@@ -182,7 +261,8 @@
                     </div>
                 </div>
                 <a href="about.html" class="text-slate-300 hover:text-white font-medium transition-colors">About</a>
-                <a href="services.html" class="text-slate-300 hover:text-white font-medium transition-colors">Services</a>
+                <a href="services.html"
+                    class="text-slate-300 hover:text-white font-medium transition-colors">Services</a>
                 <a href="contact.html" class="text-slate-300 hover:text-white font-medium transition-colors">Contact</a>
 
                 <div class="group relative">
@@ -198,7 +278,7 @@
                             <span class="w-8 flex justify-center"><i class="fa-solid fa-user text-secondary"></i></span>
                             <div>
                                 <span class="block text-sm font-bold">Client Portal</span>
-                                <span class="block text-xs text-slate-400">User Dashboard</span>
+                                <span class="block text-xs text-slate-600">User Dashboard</span>
                             </div>
                         </a>
                         <a href="admin-dashboard.html"
@@ -207,7 +287,7 @@
                                     class="fa-solid fa-user-shield text-primary"></i></span>
                             <div>
                                 <span class="block text-sm font-bold">Admin Portal</span>
-                                <span class="block text-xs text-slate-400">Admin Dashboard</span>
+                                <span class="block text-xs text-slate-600">Admin Dashboard</span>
                             </div>
                         </a>
                     </div>
@@ -220,7 +300,9 @@
                     title="Toggle Region">
                     <i class="fa-solid fa-globe"></i>
                 </button>
-                <a href="signup.html" class="px-5 py-2.5 rounded-lg border border-[#00FF88]/30 text-[#00FF88] font-semibold hover:bg-[#00FF88]/10 hover:border-[#00FF88] transition-all">Sign Up</a>
+                <a href="signup.html"
+                    class="px-5 py-2.5 rounded-lg border border-[#00FF88]/30 text-[#00FF88] font-semibold hover:bg-[#00FF88]/10 hover:border-[#00FF88] transition-all">Sign
+                    Up</a>
                 <a href="login.html" class="btn-cyber px-5 py-2.5 rounded-lg font-bold transition-all">Login</a>
             </div>
 
@@ -235,7 +317,8 @@
                 <div class="group dropdown-toggle cursor-pointer border-b border-[#00D4FF]/10 pb-2">
                     <div class="flex justify-between items-center text-white mb-2">
                         <span>Home</span>
-                        <i class="fa-solid fa-chevron-down chevron-icon transition-transform text-xs text-[#00D4FF]"></i>
+                        <i
+                            class="fa-solid fa-chevron-down chevron-icon transition-transform text-xs text-[#00D4FF]"></i>
                     </div>
                     <div class="dropdown-menu hidden pl-4 space-y-2 mt-2">
                         <a href="index.html" class="block text-slate-400 hover:text-[#00D4FF] py-1">Home Version 1</a>
@@ -246,17 +329,22 @@
                 <div class="group dropdown-toggle cursor-pointer border-b border-[#00D4FF]/10 pb-2">
                     <div class="flex justify-between items-center text-white mb-2">
                         <span>Dashboard</span>
-                        <i class="fa-solid fa-chevron-down chevron-icon transition-transform text-xs text-[#00D4FF]"></i>
+                        <i
+                            class="fa-solid fa-chevron-down chevron-icon transition-transform text-xs text-[#00D4FF]"></i>
                     </div>
                     <div class="dropdown-menu hidden pl-4 space-y-2 mt-2">
-                        <a href="user-dashboard.html" class="block text-slate-400 hover:text-[#00D4FF] py-1">Client Portal</a>
-                        <a href="admin-dashboard.html" class="block text-slate-400 hover:text-[#00D4FF] py-1">Admin Portal</a>
+                        <a href="user-dashboard.html" class="block text-slate-400 hover:text-[#00D4FF] py-1">Client
+                            Portal</a>
+                        <a href="admin-dashboard.html" class="block text-slate-400 hover:text-[#00D4FF] py-1">Admin
+                            Portal</a>
                     </div>
                 </div>
 
                 <a href="about.html" class="text-slate-400 hover:text-white border-b border-[#00D4FF]/10 pb-2">About</a>
-                <a href="services.html" class="text-slate-400 hover:text-white border-b border-[#00D4FF]/10 pb-2">Services</a>
-                <a href="contact.html" class="text-slate-400 hover:text-white border-b border-[#00D4FF]/10 pb-2">Contact</a>
+                <a href="services.html"
+                    class="text-slate-400 hover:text-white border-b border-[#00D4FF]/10 pb-2">Services</a>
+                <a href="contact.html"
+                    class="text-slate-400 hover:text-white border-b border-[#00D4FF]/10 pb-2">Contact</a>
 
                 <div class="flex justify-between items-center border-b border-[#00D4FF]/10 pb-2">
                     <span class="text-slate-400">Region</span>
@@ -266,9 +354,9 @@
                 </div>
 
                 <a href="signup.html"
-                    class="text-center w-full border border-[#00FF88]/30 text-[#00FF88] py-3 rounded-lg mt-2 hover:bg-[#00FF88]/10 transition-colors font-semibold">Create Account</a>
-                <a href="login.html"
-                    class="text-center w-full btn-cyber py-3 rounded-lg mt-2 font-bold\">Login</a>
+                    class="text-center w-full border border-[#00FF88]/30 text-[#00FF88] py-3 rounded-lg mt-2 hover:bg-[#00FF88]/10 transition-colors font-semibold">Create
+                    Account</a>
+                <a href="login.html" class="text-center w-full btn-cyber py-3 rounded-lg mt-2 font-bold\">Login</a>
             </div>
         </div>
     </nav>
@@ -278,8 +366,10 @@
         <!-- Animated background orbs -->
         <div class="absolute inset-0 -z-10 overflow-hidden">
             <div class="absolute -right-32 -top-32 w-[600px] h-[600px] bg-[#00D4FF] rounded-full glow-orb"></div>
-            <div class="absolute -left-32 top-1/3 w-[500px] h-[500px] bg-[#A855F7] rounded-full glow-orb" style="animation-delay: 1s;"></div>
-            <div class="absolute right-1/4 bottom-0 w-[400px] h-[400px] bg-[#00FF88] rounded-full glow-orb" style="animation-delay: 2s;"></div>
+            <div class="absolute -left-32 top-1/3 w-[500px] h-[500px] bg-[#A855F7] rounded-full glow-orb"
+                style="animation-delay: 1s;"></div>
+            <div class="absolute right-1/4 bottom-0 w-[400px] h-[400px] bg-[#00FF88] rounded-full glow-orb"
+                style="animation-delay: 2s;"></div>
             <!-- Floating particles -->
             <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
             <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
@@ -290,36 +380,43 @@
             <div class="particle" style="left: 90%; animation-delay: 6s;"></div>
         </div>
 
-        <div class="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
+        <div
+            class="container mx-auto px-4 sm:px-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-16 relative z-10">
             <div class="w-full lg:w-1/2 space-y-8 text-center lg:text-left">
                 <!-- Badge -->
                 <div class="inline-flex items-center gap-2 hero-badge px-4 py-2 rounded-full reveal">
                     <span class="w-2 h-2 bg-[#00FF88] rounded-full animate-pulse"></span>
                     <span class="text-sm font-semibold text-[#00D4FF]">SOC 2 Type II Certified</span>
                 </div>
-                
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] reveal reveal-delay-100">
+
+                <h1
+                    class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] reveal reveal-delay-100">
                     <span class="block">Next-Gen</span>
                     <span class="shimmer-text">Cybersecurity</span>
                     <span class="block">Shield</span>
                 </h1>
-                
-                <p class="text-xl md:text-2xl text-slate-400 max-w-xl mx-auto lg:mx-0 reveal reveal-delay-200 leading-relaxed">
-                    AI-powered threat detection. Zero-trust architecture. <span class="text-[#00D4FF]">Military-grade</span> protection for your business.
+
+                <p
+                    class="text-xl md:text-2xl text-slate-400 max-w-xl mx-auto lg:mx-0 reveal reveal-delay-200 leading-relaxed">
+                    AI-powered threat detection. Zero-trust architecture. <span
+                        class="text-[#00D4FF]">Military-grade</span> protection for your business.
                 </p>
-                
+
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start reveal reveal-delay-300">
-                    <a href="#assessment" class="btn-cyber px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300">
+                    <a href="#assessment"
+                        class="btn-cyber px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300">
                         <i class="fa-solid fa-shield-halved mr-2"></i>Get Security Audit
                     </a>
-                    <a href="contact.html" class="group px-8 py-4 rounded-xl border-2 border-[#00D4FF]/30 text-white font-semibold hover:border-[#00D4FF] hover:bg-[#00D4FF]/10 transition-all duration-300 flex items-center justify-center gap-2">
+                    <a href="contact.html"
+                        class="group px-8 py-4 rounded-xl border-2 border-[#00D4FF]/30 text-white font-semibold hover:border-[#00D4FF] hover:bg-[#00D4FF]/10 transition-all duration-300 flex items-center justify-center gap-2">
                         <i class="fa-solid fa-play text-[#00FF88]"></i>
                         Watch Demo
                     </a>
                 </div>
-                
+
                 <!-- Stats row -->
-                <div class="flex flex-wrap items-center gap-6 justify-center lg:justify-start pt-4 reveal reveal-delay-300">
+                <div
+                    class="flex flex-wrap items-center gap-6 justify-center lg:justify-start pt-4 reveal reveal-delay-300">
                     <div class="text-center">
                         <div class="text-3xl font-black text-[#00D4FF] neon-text">99.9%</div>
                         <div class="text-xs text-slate-500 uppercase tracking-wider">Uptime</div>
@@ -341,20 +438,29 @@
             <div class="relative w-full lg:w-1/2 flex justify-center">
                 <div class="relative w-[450px] h-[450px] max-w-full">
                     <!-- Outer ring -->
-                    <div class="absolute inset-0 rounded-full border-2 border-[#00D4FF]/20 animate-[spin_20s_linear_infinite]"></div>
-                    <div class="absolute inset-4 rounded-full border border-[#00FF88]/20 animate-[spin_15s_linear_infinite_reverse]"></div>
-                    <div class="absolute inset-8 rounded-full border border-[#A855F7]/20 animate-[spin_25s_linear_infinite]"></div>
-                    
+                    <div
+                        class="absolute inset-0 rounded-full border-2 border-[#00D4FF]/20 animate-[spin_20s_linear_infinite]">
+                    </div>
+                    <div
+                        class="absolute inset-4 rounded-full border border-[#00FF88]/20 animate-[spin_15s_linear_infinite_reverse]">
+                    </div>
+                    <div
+                        class="absolute inset-8 rounded-full border border-[#A855F7]/20 animate-[spin_25s_linear_infinite]">
+                    </div>
+
                     <!-- Center glow -->
-                    <div class="absolute inset-16 bg-gradient-to-br from-[#00D4FF]/20 via-[#00FF88]/10 to-[#A855F7]/20 rounded-full blur-2xl animate-pulse"></div>
-                    
+                    <div
+                        class="absolute inset-16 bg-gradient-to-br from-[#00D4FF]/20 via-[#00FF88]/10 to-[#A855F7]/20 rounded-full blur-2xl animate-pulse">
+                    </div>
+
                     <!-- Shield icon -->
                     <div class="absolute inset-0 flex items-center justify-center">
                         <div class="relative">
-                            <i class="fa-solid fa-shield-halved text-[180px] bg-gradient-to-br from-[#00D4FF] via-[#00FF88] to-[#A855F7] bg-clip-text text-transparent drop-shadow-[0_0_60px_rgba(0,212,255,0.5)]"></i>
+                            <i
+                                class="fa-solid fa-shield-halved text-[180px] bg-gradient-to-br from-[#00D4FF] via-[#00FF88] to-[#A855F7] bg-clip-text text-transparent drop-shadow-[0_0_60px_rgba(0,212,255,0.5)]"></i>
                         </div>
                     </div>
-                    
+
                     <!-- Floating badges -->
                     <div class="absolute top-8 right-4 card-cyber px-4 py-3 rounded-xl animate-float shadow-lg">
                         <div class="flex items-center gap-2">
@@ -362,13 +468,15 @@
                             <span class="text-sm font-bold text-white">Encrypted</span>
                         </div>
                     </div>
-                    <div class="absolute bottom-12 left-0 card-cyber px-4 py-3 rounded-xl animate-float shadow-lg" style="animation-delay: 1s;">
+                    <div class="absolute bottom-12 left-0 card-cyber px-4 py-3 rounded-xl animate-float shadow-lg"
+                        style="animation-delay: 1s;">
                         <div class="flex items-center gap-2">
                             <i class="fa-solid fa-check-circle text-[#00D4FF]"></i>
                             <span class="text-sm font-bold text-white">Verified</span>
                         </div>
                     </div>
-                    <div class="absolute top-1/2 -right-4 card-cyber px-4 py-3 rounded-xl animate-float shadow-lg" style="animation-delay: 2s;">
+                    <div class="absolute top-1/2 -right-4 card-cyber px-4 py-3 rounded-xl animate-float shadow-lg"
+                        style="animation-delay: 2s;">
                         <div class="flex items-center gap-2">
                             <i class="fa-solid fa-bolt text-[#A855F7]"></i>
                             <span class="text-sm font-bold text-white">Active</span>
@@ -384,15 +492,20 @@
     <!-- Services Tabs -->
     <section class="py-20 lg:py-32 relative overflow-hidden">
         <!-- Background decoration -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#00D4FF]/5 rounded-full blur-[120px] -z-10"></div>
-        
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-[#00D4FF]/5 rounded-full blur-[120px] -z-10">
+        </div>
+
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-20 reveal">
-                <div class="inline-block px-4 py-2 rounded-full bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] font-bold text-sm mb-6">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] font-bold text-sm mb-6">
                     <i class="fa-solid fa-sparkles mr-2"></i>Our Solutions
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Enterprise <span class="shimmer-text">Security</span> Suite</h2>
-                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Holistic protection tailored to your industry needs with cutting-edge technology.</p>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Enterprise <span
+                        class="shimmer-text">Security</span> Suite</h2>
+                <p class="text-slate-400 text-lg max-w-2xl mx-auto">Holistic protection tailored to your industry needs
+                    with cutting-edge technology.</p>
             </div>
 
             <div class="grid lg:grid-cols-4 gap-6 md:gap-8">
@@ -537,59 +650,79 @@
         <div class="absolute inset-0 bg-gradient-to-b from-[#0a0f1a] via-[#0d1424] to-[#0a0f1a] -z-10"></div>
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-20 reveal">
-                <div class="inline-block px-4 py-2 rounded-full bg-[#00FF88]/10 border border-[#00FF88]/20 text-[#00FF88] font-bold text-sm mb-6">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-[#00FF88]/10 border border-[#00FF88]/20 text-[#00FF88] font-bold text-sm mb-6">
                     <i class="fa-solid fa-diagram-project mr-2"></i>Our Process
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Proven <span class="shimmer-text">Framework</span></h2>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Proven <span
+                        class="shimmer-text">Framework</span></h2>
                 <p class="text-slate-400 text-lg">Four steps to bulletproof security</p>
             </div>
-            
+
             <div class="grid md:grid-cols-4 gap-6 relative">
                 <!-- Connecting Line -->
-                <div class="hidden md:block absolute top-16 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-[#00D4FF] via-[#00FF88] to-[#A855F7] -z-0"></div>
+                <div
+                    class="hidden md:block absolute top-16 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-[#00D4FF] via-[#00FF88] to-[#A855F7] -z-0">
+                </div>
 
                 <div class="text-center relative z-10 group reveal">
                     <div class="relative">
-                        <div class="w-20 h-20 mx-auto card-cyber neon-border rounded-2xl flex items-center justify-center text-[#00D4FF] text-3xl font-black shadow-lg group-hover:scale-110 transition-all duration-500">
+                        <div
+                            class="w-20 h-20 mx-auto card-cyber neon-border rounded-2xl flex items-center justify-center text-[#00D4FF] text-3xl font-black shadow-lg group-hover:scale-110 transition-all duration-500">
                             01
                         </div>
-                        <div class="absolute -inset-2 bg-[#00D4FF]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                        <div
+                            class="absolute -inset-2 bg-[#00D4FF]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10">
+                        </div>
                     </div>
                     <h3 class="mt-8 text-xl font-bold text-white">Assess</h3>
-                    <p class="mt-3 text-slate-400 text-sm leading-relaxed">Deep vulnerability scanning & comprehensive security audit</p>
+                    <p class="mt-3 text-slate-400 text-sm leading-relaxed">Deep vulnerability scanning & comprehensive
+                        security audit</p>
                 </div>
-                
+
                 <div class="text-center relative z-10 group reveal reveal-delay-100">
                     <div class="relative">
-                        <div class="w-20 h-20 mx-auto card-cyber neon-border rounded-2xl flex items-center justify-center text-[#00FF88] text-3xl font-black shadow-lg group-hover:scale-110 transition-all duration-500">
+                        <div
+                            class="w-20 h-20 mx-auto card-cyber neon-border rounded-2xl flex items-center justify-center text-[#00FF88] text-3xl font-black shadow-lg group-hover:scale-110 transition-all duration-500">
                             02
                         </div>
-                        <div class="absolute -inset-2 bg-[#00FF88]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                        <div
+                            class="absolute -inset-2 bg-[#00FF88]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10">
+                        </div>
                     </div>
                     <h3 class="mt-8 text-xl font-bold text-white">Plan</h3>
-                    <p class="mt-3 text-slate-400 text-sm leading-relaxed">Custom strategic roadmap tailored to your needs</p>
+                    <p class="mt-3 text-slate-400 text-sm leading-relaxed">Custom strategic roadmap tailored to your
+                        needs</p>
                 </div>
-                
+
                 <div class="text-center relative z-10 group reveal reveal-delay-200">
                     <div class="relative">
-                        <div class="w-20 h-20 mx-auto card-cyber neon-border rounded-2xl flex items-center justify-center text-[#A855F7] text-3xl font-black shadow-lg group-hover:scale-110 transition-all duration-500">
+                        <div
+                            class="w-20 h-20 mx-auto card-cyber neon-border rounded-2xl flex items-center justify-center text-[#A855F7] text-3xl font-black shadow-lg group-hover:scale-110 transition-all duration-500">
                             03
                         </div>
-                        <div class="absolute -inset-2 bg-[#A855F7]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                        <div
+                            class="absolute -inset-2 bg-[#A855F7]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10">
+                        </div>
                     </div>
                     <h3 class="mt-8 text-xl font-bold text-white">Deploy</h3>
-                    <p class="mt-3 text-slate-400 text-sm leading-relaxed">Seamless implementation of security controls</p>
+                    <p class="mt-3 text-slate-400 text-sm leading-relaxed">Seamless implementation of security controls
+                    </p>
                 </div>
-                
+
                 <div class="text-center relative z-10 group reveal reveal-delay-300">
                     <div class="relative">
-                        <div class="w-20 h-20 mx-auto card-cyber neon-border rounded-2xl flex items-center justify-center text-[#00D4FF] text-3xl font-black shadow-lg group-hover:scale-110 transition-all duration-500">
+                        <div
+                            class="w-20 h-20 mx-auto card-cyber neon-border rounded-2xl flex items-center justify-center text-[#00D4FF] text-3xl font-black shadow-lg group-hover:scale-110 transition-all duration-500">
                             04
                         </div>
-                        <div class="absolute -inset-2 bg-[#00D4FF]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10"></div>
+                        <div
+                            class="absolute -inset-2 bg-[#00D4FF]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10">
+                        </div>
                     </div>
                     <h3 class="mt-8 text-xl font-bold text-white">Monitor</h3>
-                    <p class="mt-3 text-slate-400 text-sm leading-relaxed">24/7 AI-powered surveillance & maintenance</p>
+                    <p class="mt-3 text-slate-400 text-sm leading-relaxed">24/7 AI-powered surveillance & maintenance
+                    </p>
                 </div>
             </div>
         </div>
@@ -600,10 +733,12 @@
         <div class="absolute inset-0 bg-gradient-to-b from-[#0a0f1a] via-[#0d1424] to-[#0a0f1a] -z-10"></div>
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <div class="inline-block px-4 py-2 rounded-full bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] font-bold text-sm mb-6">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] font-bold text-sm mb-6">
                     <i class="fa-solid fa-certificate mr-2"></i>Certifications & Compliance
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Enterprise-Grade <span class="shimmer-text">Standards</span></h2>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Enterprise-Grade <span
+                        class="shimmer-text">Standards</span></h2>
                 <p class="text-slate-400 text-lg">Certified and compliant with the most rigorous industry frameworks</p>
             </div>
 
@@ -653,18 +788,19 @@
         <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-[#A855F7]/5 rounded-full blur-[150px] -z-10"></div>
         <div class="container mx-auto px-4 sm:px-6 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <div class="inline-block px-4 py-2 rounded-full bg-[#00FF88]/10 border border-[#00FF88]/20 text-[#00FF88] font-bold text-sm mb-6">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-[#00FF88]/10 border border-[#00FF88]/20 text-[#00FF88] font-bold text-sm mb-6">
                     <i class="fa-solid fa-microchip mr-2"></i>Technology Partners
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Best-in-Class <span class="shimmer-text">Stack</span></h2>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Best-in-Class <span
+                        class="shimmer-text">Stack</span></h2>
                 <p class="text-slate-400 text-lg">We leverage industry-leading tools and maintain strategic partnerships
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
                 <!-- Security Tools -->
-                <div
-                    class="p-6 rounded-2xl card-cyber group hover:-translate-y-2 transition-all duration-500 reveal">
+                <div class="p-6 rounded-2xl card-cyber group hover:-translate-y-2 transition-all duration-500 reveal">
                     <div
                         class="w-14 h-14 bg-gradient-to-br from-[#EF4444]/20 to-[#EF4444]/5 rounded-xl flex items-center justify-center text-[#EF4444] text-2xl mb-4 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-shield-halved"></i>
@@ -673,7 +809,8 @@
                     <ul class="space-y-2 text-sm text-slate-400">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i>
                             Fortinet</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i> Palo
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i>
+                            Palo
                             Alto Networks</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i>
                             CrowdStrike</li>
@@ -693,7 +830,8 @@
                     <ul class="space-y-2 text-sm text-slate-400">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i> AWS
                             Advanced Partner</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i> Azure
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i>
+                            Azure
                             Gold Partner</li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i>
                             Google Cloud Partner</li>
@@ -733,9 +871,11 @@
                     <ul class="space-y-2 text-sm text-slate-400">
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i>
                             Microsoft 365</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i> Slack
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i>
+                            Slack
                             Enterprise</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i> Zoom
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i>
+                            Zoom
                         </li>
                         <li class="flex items-center gap-2"><i class="fa-solid fa-check text-[#00FF88] text-xs"></i>
                             ServiceNow</li>
@@ -749,17 +889,18 @@
     <section class="py-16 lg:py-24 bg-slate-900 relative overflow-hidden border-y border-slate-800">
         <div class="container mx-auto px-4 sm:px-6 relative z-10">
             <div class="text-center max-w-2xl mx-auto mb-16 reveal">
-                <div class="inline-block px-4 py-2 rounded-full bg-[#00FF88]/10 border border-[#00FF88]/20 text-[#00FF88] font-bold text-sm mb-6">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-[#00FF88]/10 border border-[#00FF88]/20 text-[#00FF88] font-bold text-sm mb-6">
                     <i class="fa-solid fa-quote-left mr-2"></i>Client Testimonials
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Trusted by <span class="shimmer-text">Leaders</span></h2>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Trusted by <span
+                        class="shimmer-text">Leaders</span></h2>
                 <p class="text-slate-400 text-lg">Don't just take our word for it - hear from our satisfied clients</p>
             </div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 <!-- Testimonial 1 -->
-                <div
-                    class="p-8 rounded-2xl card-cyber group hover:-translate-y-2 transition-all duration-500 reveal">
+                <div class="p-8 rounded-2xl card-cyber group hover:-translate-y-2 transition-all duration-500 reveal">
                     <div class="flex items-center gap-1 mb-4 text-[#F59E0B]">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -767,7 +908,8 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 mb-6 italic leading-relaxed">"SecureTech transformed our IT infrastructure. Their proactive
+                    <p class="text-slate-300 mb-6 italic leading-relaxed">"SecureTech transformed our IT infrastructure.
+                        Their proactive
                         approach prevented three major security incidents last quarter alone. Absolutely invaluable
                         partner."</p>
                     <div class="flex items-center gap-4">
@@ -792,7 +934,8 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 mb-6 italic leading-relaxed">"We achieved HIPAA compliance 3 months ahead of schedule
+                    <p class="text-slate-300 mb-6 italic leading-relaxed">"We achieved HIPAA compliance 3 months ahead
+                        of schedule
                         thanks to their expert guidance. The team is knowledgeable, responsive, and truly cares about
                         our success."</p>
                     <div class="flex items-center gap-4">
@@ -817,7 +960,8 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="text-slate-300 mb-6 italic leading-relaxed">"Best IT decision we ever made. 24/7 support, lightning-fast
+                    <p class="text-slate-300 mb-6 italic leading-relaxed">"Best IT decision we ever made. 24/7 support,
+                        lightning-fast
                         response times, and they've reduced our costs by over 35%. Simply outstanding."</p>
                     <div class="flex items-center gap-4">
                         <div
@@ -839,18 +983,19 @@
         <div class="absolute inset-0 bg-gradient-to-b from-[#0a0f1a] via-[#0d1424] to-[#0a0f1a] -z-10"></div>
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-20 reveal">
-                <div class="inline-block px-4 py-2 rounded-full bg-[#A855F7]/10 border border-[#A855F7]/20 text-[#A855F7] font-bold text-sm mb-6">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-[#A855F7]/10 border border-[#A855F7]/20 text-[#A855F7] font-bold text-sm mb-6">
                     <i class="fa-solid fa-crown mr-2"></i>Transparent Pricing
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Choose Your <span class="shimmer-text">Protection</span></h2>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Choose Your <span
+                        class="shimmer-text">Protection</span></h2>
                 <p class="text-slate-400 text-lg">Flexible plans designed to scale with your business. No hidden fees.
                 </p>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
                 <!-- Essentials Plan -->
-                <div
-                    class="p-8 rounded-2xl card-cyber group hover:scale-105 transition-all duration-500 reveal">
+                <div class="p-8 rounded-2xl card-cyber group hover:scale-105 transition-all duration-500 reveal">
                     <div class="text-[#00D4FF] font-bold text-sm mb-4 tracking-wider uppercase">Essentials</div>
                     <p class="text-slate-400 mb-6 text-sm">Perfect for small businesses</p>
                     <div class="mb-6">
@@ -893,11 +1038,13 @@
                         class="absolute -top-4 left-1/2 transform -translate-x-1/2 px-6 py-2 rounded-full bg-gradient-to-r from-[#00D4FF] to-[#00FF88] text-[#0a0f1a] text-xs font-black uppercase">
                         Most Popular
                     </div>
-                    <div class="absolute inset-0 bg-gradient-to-br from-[#00D4FF]/5 to-[#00FF88]/5 rounded-2xl -z-10"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#00D4FF]/5 to-[#00FF88]/5 rounded-2xl -z-10">
+                    </div>
                     <div class="text-[#00FF88] font-bold text-sm mb-4 tracking-wider uppercase">Professional</div>
                     <p class="text-slate-400 mb-6 text-sm">Comprehensive security suite</p>
                     <div class="mb-6">
-                        <div class="text-5xl font-black text-white">$1,299<span class="text-lg font-normal text-slate-500">/mo</span>
+                        <div class="text-5xl font-black text-white">$1,299<span
+                                class="text-lg font-normal text-slate-500">/mo</span>
                         </div>
                         <p class="text-sm text-slate-500 mt-1">Billed annually</p>
                     </div>
@@ -982,10 +1129,12 @@
         <div class="absolute inset-0 bg-gradient-to-b from-[#0a0f1a] via-[#0d1424] to-[#0a0f1a] -z-10"></div>
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center max-w-2xl mx-auto mb-20 reveal">
-                <div class="inline-block px-4 py-2 rounded-full bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] font-bold text-sm mb-6">
+                <div
+                    class="inline-block px-4 py-2 rounded-full bg-[#00D4FF]/10 border border-[#00D4FF]/20 text-[#00D4FF] font-bold text-sm mb-6">
                     <i class="fa-solid fa-circle-question mr-2"></i>Frequently Asked Questions
                 </div>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Got <span class="shimmer-text">Questions?</span></h2>
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-4">Got <span
+                        class="shimmer-text">Questions?</span></h2>
                 <p class="text-slate-400 text-lg">Everything you need to know about our services</p>
             </div>
 
@@ -1089,25 +1238,31 @@
         <!-- Animated background -->
         <div class="absolute inset-0 -z-10">
             <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#00D4FF] rounded-full glow-orb"></div>
-            <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#A855F7] rounded-full glow-orb" style="animation-delay: 1.5s;"></div>
+            <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#A855F7] rounded-full glow-orb"
+                style="animation-delay: 1.5s;"></div>
         </div>
-        
+
         <div class="container mx-auto px-4 sm:px-6 relative z-10">
             <div class="max-w-3xl mx-auto">
                 <div class="card-cyber rounded-3xl p-10 md:p-14 text-center neon-border">
-                    <div class="w-20 h-20 mx-auto mb-8 rounded-2xl bg-gradient-to-br from-[#00D4FF] to-[#00FF88] flex items-center justify-center">
+                    <div
+                        class="w-20 h-20 mx-auto mb-8 rounded-2xl bg-gradient-to-br from-[#00D4FF] to-[#00FF88] flex items-center justify-center">
                         <i class="fa-solid fa-bell text-3xl text-[#0a0f1a]"></i>
                     </div>
-                    <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Stay <span class="shimmer-text">Ahead</span> of Threats</h2>
-                    <p class="text-slate-400 mb-10 text-lg max-w-xl mx-auto">Join 5,000+ security professionals receiving weekly threat intelligence and vulnerability alerts.</p>
+                    <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Stay <span
+                            class="shimmer-text">Ahead</span> of Threats</h2>
+                    <p class="text-slate-400 mb-10 text-lg max-w-xl mx-auto">Join 5,000+ security professionals
+                        receiving weekly threat intelligence and vulnerability alerts.</p>
                     <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
                         <input type="email" placeholder="Enter your work email" required
                             class="flex-1 px-6 py-4 rounded-xl bg-[#0a0f1a] border-2 border-[#00D4FF]/30 text-white placeholder-slate-500 focus:outline-none focus:border-[#00D4FF] transition-all">
-                        <button type="submit" class="btn-cyber px-8 py-4 rounded-xl font-bold whitespace-nowrap transition-all duration-300">
+                        <button type="submit"
+                            class="btn-cyber px-8 py-4 rounded-xl font-bold whitespace-nowrap transition-all duration-300">
                             <i class="fa-solid fa-paper-plane mr-2"></i>Subscribe
                         </button>
                     </form>
-                    <p class="text-slate-500 text-xs mt-6"><i class="fa-solid fa-lock mr-1"></i> We respect your privacy. Unsubscribe anytime.</p>
+                    <p class="text-slate-500 text-xs mt-6"><i class="fa-solid fa-lock mr-1"></i> We respect your
+                        privacy. Unsubscribe anytime.</p>
                 </div>
             </div>
         </div>
@@ -1120,12 +1275,15 @@
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div>
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00D4FF] to-[#00FF88] flex items-center justify-center">
+                        <div
+                            class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00D4FF] to-[#00FF88] flex items-center justify-center">
                             <i class="fa-solid fa-shield-halved text-[#0a0f1a] text-xl"></i>
                         </div>
-                        <span class="text-2xl font-black text-white">Secure<span class="text-[#00D4FF]">Tech</span></span>
+                        <span class="text-2xl font-black text-white">Secure<span
+                                class="text-[#00D4FF]">Tech</span></span>
                     </div>
-                    <p class="text-slate-500 text-sm leading-relaxed">Next-generation cybersecurity solutions for the modern enterprise.</p>
+                    <p class="text-slate-500 text-sm leading-relaxed">Next-generation cybersecurity solutions for the
+                        modern enterprise.</p>
                 </div>
                 <!-- Footer Links -->
                 <div class="text-slate-500">
